@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Acomodação</title>
+</head>
+<body>
+    <%-include('cabecalhoAcomodacao.ejs')%>
+    <h2>Você tem certeza que deseja excluir esta acomodação?</h2>
+    <p><strong>Tipo:</strong> <%= acomodacao.ACO_TIPO %></p>
+    <p><strong>Descrição:</strong> <%= acomodacao.ACO_DESCRICAO %></p>
+    <p><strong>Disponibilidade:</strong> <%= acomodacao.ACO_DISPONIBILIDADE %></p>
+    <p><strong>Tipo:</strong> <%= acomodacao.ACO_FOTO%></p>
+    <p><strong>Acesso:</strong> <%= acomodacao.ACO_ACESSO %></p>
+    <p><strong>Manutenção:</strong> <%= acomodacao.ACO_MANUTENCAO %></p>
+
+    <form method="post">
+        <input type="hidden" name="_method" value="DELETE">
+         <div class="text-right">
+        <input type="submit" value="Adicionar" class="btn btn-success">
+    </div>
+    </form>
+</body>
+<%-include("../rodape.ejs")%>
+</html>

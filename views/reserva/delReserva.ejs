@@ -1,0 +1,18 @@
+<!-- delReserva.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Reserva</title>
+</head>
+<body>
+    <%- include('cabecalhoReserva.ejs') %>
+    <form method="post" action="/reserva/del">
+        <label for="re_numero">Número da Reserva a Deletar</label>
+        <input type="number" name="re_numero" id="re_numero" required placeholder="Digite o número da reserva a deletar"><br>
+        <button type="submit">Deletar Reserva</button>
+    </form>
+    <%- include('rodape.ejs') %>
+</body>
+</html>

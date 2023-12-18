@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Reserva</title>
+</head>  
+<body>
+    <%- include('cabecalhoReserva.ejs') %>
+    <form method="post">
+        <label for="CLI_CPF">Cliente</label>
+        <select id="CLI_CPF" name="CLI_CPF" required>
+          <% clientes.forEach(function(Cliente) { %>
+            <option value="<%= cliente.CLI_CPF %>"><%= cliente.CLI_CPF %></option>
+          <% }); %>
+        </select>
+      
+        <label for="ACO_ACESSO">ACO_CODIGO:</label>
+        <select id="ACO_ACESSO" name="ACO_ACESSO" required>
+          <% acomodacoes.forEach(function(acomodacao) { %>
+            <option value="<%= acomodacao.ACO_ACESSO %>"><%= acomodacao.ACO_ACESSO %></option>
+          <% }); %>
+        </select>
+          
+        <label for="RE_NPESSOAS">Quantidade de Pessoas</label>
+        <input type="number" name="RE_NPESSOAS" id="RE_NPESSOAS" required placeholder="Digite a quantidade de pessoas"><br>
+        <label for="RE_NUMERO">Número</label>
+        <input type="number" name="RE_NUMERO" id="RE_NUMERO" required placeholder="Digite o número da reserva"><br>
+        <label for="RE_PRECO">Preço</label>
+        <input type="text" name="RE_PRECO" id="RE_PRECO" required placeholder="Digite o preço da reserva"><br>
+        <label for="RE_CHECKIN">Check-in</label>
+        <input type="text" name="RE_CHECKIN" id="RE_CHECKIN" required placeholder="Digite a data de check-in"><br>
+        <label for="RE_SERVICO_ESPECIAL">Serviço Especial</label>
+        <input type="text" name="servico_especial" id="servico_especial"  required placeholder="Digite o serviço desejado"><br>
+        <button type="submit">Adicionar Reserva</button> 
+    </form>
+    
+    <%- include('rodape.ejs') %>
+</body>
+</html>

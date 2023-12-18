@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Acomodações</title>
+</head>
+<body>
+    <%-include('cabecalhoAcomodacao.ejs')%>
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Disponibilidade</th>
+            <th>Foto</th>
+            <th>Acesso</th>
+            <th>Manutenção</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+
+        <% acomodacoes.forEach(function(acomodacao){ %>
+            <tr>
+                <td><%= acomodacao.ACO_TIPO %></td>
+                <td><%= acomodacao.ACO_DESCRICAO %></td>
+                <td><%= acomodacao.ACO_DISPONIBILIDADE %></td>
+                <td><%= acomodacao.ACO_FOTO %></td>
+                <td><%= acomodacao.ACO_ACESSO %></td>
+                <td><%= acomodacao.ACO_MANUTENCAO %></td>
+                <td><a href="/acomodacao/edit/<%= acomodacao._id %>">Editar</a></td>
+                <td><a href="/acomodacao/del/<%= acomodacao._id %>">Excluir</a></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+<%-include("../rodape.ejs")%>
+</html>

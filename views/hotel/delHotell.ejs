@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Hotel</title>
+</head>
+<body>
+    <%-include('cabecalhoHotel.ejs')%>
+    <h2>Você tem certeza que deseja excluir este hotel?</h2>
+    <p><strong>Nome:</strong> <%= hotel.HO_NOME %></p>
+    <p><strong>Contato:</strong> <%= hotel.HO_NUMERO %></p>
+    <p><strong>Endereço:</strong> <%= hotel.HO_ENDERECO %></p>
+    <p><strong>CEP:</strong> <%= hotel.HO_CEP %></p>
+    <p><strong>Foto:</strong> <%= hotel.HO_FOTO %></p>
+    <p><strong>Honorário:</strong> <%= hotel.HO_HONRA %></p>
+    <p><strong>Honorário:</strong> <%= hotel.HO_FOTO %></p>
+
+    <form method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Confirmar Exclusão">
+    </form>
+</body>
+<%-include("../rodape.ejs")%>
+</html>

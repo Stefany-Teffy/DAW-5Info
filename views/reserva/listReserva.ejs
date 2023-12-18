@@ -1,0 +1,40 @@
+<!-- listReservas.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Reservas</title>
+</head>
+<body>
+    <%- include('cabecalhoReserva.ejs') %>
+    <table>
+        <tr>
+            <th>Cliente</th>
+            <th>Quarto</th>
+            <th>Pessoas</th>
+            <th>Número</th>
+            <th>Preço</th>
+            <th>Check-in</th>
+            <th>Serviço Especial</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+
+        <% reservas.forEach(function(reserva) { %>
+            <tr>
+                <td><%= reserva.CLI_CODIGO %></td>
+                <td><%= reserva.ACO_CODIGO %></td>
+                <td><%= reserva.RE_NPESSOAS %></td>
+                <td><%= reserva.RE_NUMERO %></td>
+                <td><%= reserva.RE_PRECO %></td>
+                <td><%= reserva.RE_CHECKIN %></td>
+                <td><%= reserva.RE_SERVICO_ESPECIAL %></td>
+                <td><a href="/reserva/edit/<%= reserva._id %>">Editar</a></td>
+                <td><a href="/reserva/del/<%= reserva._id %>">Excluir</a></td>
+            </tr>
+        <% }); %>
+    </table>
+    <%- include('rodape.ejs') %>
+</body>
+</html>

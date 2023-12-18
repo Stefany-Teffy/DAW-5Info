@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Hotéis</title>
+</head>
+<body>
+    <%-include('cabecalhoHotel.ejs')%>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Contato</th>
+            <th>Endereço</th>
+            <th>CEP</th>
+            <th>Honra</th>
+            <th>Foto</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+
+        <% hotels.forEach(function(hotel) { %>
+            <tr>
+                <td><%= hotel.HO_NOME %></td>
+                <td><%= hotel.HO_NUMERO %></td>
+                <td><%= hotel.HO_ENDERECO %></td>
+                <td><%= hotel.HO_CEP %></td>
+                <td><%= hotel.HO_HONRA %></td>
+                <td><img src="<%= hotel.HO_FOTO %>" alt="Imagem do Hotel"></td>
+                <td><a href="/hotel/edit/<%= hotel._id %>">Editar</a></td>
+                <td><a href="/hotel/del/<%= hotel._id %>">Excluir</a></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+<%-include("../rodape.ejs")%>
+</html>

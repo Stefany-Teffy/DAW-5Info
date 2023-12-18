@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Cliente</title>
+</head>
+<body>
+    <%-include('cabecalhoCliente.ejs')%>
+    <form method="post">
+        <label for="CLI_NOME">Nome</label>    
+        <input type="text" name="CLI_NOME" id="CLI_NOME" required placeholder="Digite o nome do cliente."><br>
+        <label for="CLI_CONTATO">Contato</label>
+        <input type="text" name="CLI_CONTATO" id="CLI_CONTATO" required placeholder="Digite o contato do cliente."><br>
+        <label for="CLI_CPF">CPF</label>
+        <input type="text" name="CLI_CPF" id="CLI_CPF" required placeholder="Digite o CPF do cliente."><br>
+        <label for="CLI_ENDERECO">Endereço</label>
+        <input type="text" name="CLI_ENDERECO" id="CLI_ENDERECO" required placeholder="Digite o endereço do cliente."><br>
+        <label for="CLI_NASCIMENTO">Data de Nascimento</label>
+        <input type="date" name="CLI_NASCIMENTO" id="CLI_NASCIMENTO" required><br>
+        <label for="ACO_ACESSO">Código da Acomodação</label>
+        <input type="text" name="ACO_ACESSO" id="ACO_ACESSO" required placeholder="Digite o código da acomodação."><br>
+        <label for="CLI_EMAIL">E-mail</label>
+        <input type="text" name="CLI_EMAIL" id="CLI_EMAIL" required placeholder="Digite o E-mail do cliente."><br>
+        <input type="submit" value="Adicionar">
+    </form>
+</body>
+<%-include("../rodape.ejs")%>
+</html>   

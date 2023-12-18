@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Acomodação</title>
+    
+</head>
+<body>
+    <%-include('cabecalhoAcomodacao.ejs')%>
+    <form method="post">  
+        <label for="ACO_TIPO">Tipo</label>
+        <input type="text" name="ACO_TIPO" id="ACO_TIPO" required placeholder="Digite o tipo de acomodação."><br>
+        <label for="ACO_DESCRICAO">Descrição</label>
+        <textarea name="ACO_DESCRICAO" id="ACO_DESCRICAO" required placeholder="Digite a descrição da acomodação."></textarea><br>
+        <label for="ACO_DISPONIBILIDADE">Disponibilidade</label>
+        <input type="text" name="ACO_DISPONIBILIDADE" id="ACO_DISPONIBILIDADE" required placeholder="Digite a disponibilidade."><br>
+        <label for="ACO_FOTO">Foto</label>
+        <input type="file" name="ACO_FOTO" id="ACO_FOTO" required><br>
+        <label for="ACO_ACESSO">Acesso</label>
+        <input type="number" name="ACO_ACESSO" id="ACO_ACESSO" required placeholder="Digite a chave de acesso"><br>
+        <label for="ACO_MANUTENCAO">Manutenção</label>
+        <input type="number" name="ACO_MANUTENCAO" id="ACO_MANUTENCAO" required placeholder="Digite o tipo de manutencção oferecida."><br>
+        <input type="submit" value="Adicionar">
+    </form>
+</body>
+<%-include("../rodape.ejs")%>
+</html>

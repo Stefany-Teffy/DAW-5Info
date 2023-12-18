@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Hotel</title>
+</head>
+<body>
+    <%-include('cabecalhoHotel.ejs')%>
+    <form method="post" enctype="multipart/form-data">
+        <label for="HO_NOME">Nome</label>
+        <input type="text" name="HO_NOME" id="HO_NOME" required value="<%=hotel.HO_NOME%>"><br>
+        <label for="HO_NUMERO">Número</label>
+        <input type="text" name="HO_NUMERO" id="HO_NUMERO" required value="<%=hotel.HO_NUMERO%>"><br>
+        <label for="HO_ENDERECO">Endereço</label>
+        <input type="text" name="HO_ENDERECO" id="HO_ENDERECO" required value="<%=hotel.HO_ENDERECO%>"><br>
+        <label for="HO_CEP">Cep</label>
+        <input type="text" name="HO_CEP" id="HO_CEP" required value="<%=hotel.HO_CEP%>"><br>
+        <label for="HO_HONRA">Honra</label>
+        <input type="text" name="HO_HONRA" id="HO_HONRA" required value="<%=hotel.HO_HONRA%>"><br>
+        <label for="HO_FOTO">Foto</label>
+        <input type="file" name="HO_FOTO" id="HO_FOTO" required value="<%=hotel.HO_FOTO%>"><br>        
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+<%-include("../rodape.ejs")%>
+</html>

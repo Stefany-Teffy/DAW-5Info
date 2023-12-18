@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Reserva</title>
+</head>
+<body>
+  <%- include('cabecalhoReserva.ejs') %>
+    <form method="post">
+        <label for="cliente">Cliente</label>
+        <select id="cliente" name="cliente" required>
+          <% clientes.forEach(function(cliente) { %>
+            <option value="<%= cliente.CLI_CODIGO %>"><%= cliente.nome %></option>
+          <% }); %>
+        </select>
+      
+        <label for="quarto">Quarto:</label>
+        <select id="quarto" name="quarto" required>
+          <% acomodacoes.forEach(function(acomodacao) { %>
+            <option value="<%= acomodacao.ACO_CODIGO %>"><%= acomodacao.numero %></option>
+          <% }); %>
+        </select>
+        
+        <label for="n_pessoas">Quantidade de Pessoas</label>
+        <input type="number" name="n_pessoas" id="n_pessoas" required placeholder="Digite a quantidade de pessoas"><br>
+        <label for="re_numero">Número</label>
+        <input type="number" name="re_numero" id="re_numero" required placeholder="Digite o número da reserva"><br>
+        <label for="preco">Preço</label>
+        <input type="text" name="preco" id="preco" required placeholder="Digite o preço da reserva"><br>
+        <label for="checkin">Check-in</label>
+        <input type="text" name="checkin" id="checkin" required placeholder="Digite a data de check-in"><br>
+        <label for="servico_especial">Serviço Especial</label>
+        <input type="text" name="servico_especial" id="servico_especial"  required placeholder="Digite o serviço desejado"><br>
+        <button type="submit">Salvar</button> 
+    </form>
+    
+</body>
+<%-include("../rodape.ejs")%>
+</html>

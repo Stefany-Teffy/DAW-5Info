@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Hotel</title>
+</head>
+<body>
+    <%-include('cabecalhoHotel.ejs')%>
+    <form method="post" enctype="multipart/form-data">
+        <label for=" HO_NOME">Nome</label>
+        <input type="text" name="HO_NOME" id="HO_NOME" required placeholder="Digite o nome do hotel"><br>
+        <label for="HO_NUMERO">Contato</label>
+        <input type="text" name="HO_NUMERO" id="HO_NUMERO" required placeholder="Digite seu nº de contato"><br>
+        <label for=" HO_ENDERECO">Endereço</label>
+        <input type="text" name="HO_ENDERECO" id="HO_ENDERECO" required placeholder="Digite o endereço do hotel"><br>
+        <label for="HO_CEP">CEP</label>
+        <input type="text" name="HO_CEP" id="HO_CEP" required placeholder="Digite o CEP do hotel"><br>
+        <label for=" HO_HONRA">Honra</label>
+        <input type="text" name="HO_HONRA" id="HO_HONRA" required placeholder="Digite a honra do hotel"><br>
+        <label for="HO_FOTO">Foto</label>
+        <input type="file" name="HO_FOTO" id="HO_FOTO" required><br>
+        <input type="submit" value="Adicionar">
+    </form>
+</body>
+    <%-include("../rodape.ejs")%>
+</html>
+
+
+
+
+

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Cliente</title>
+</head>
+<body>
+    <%-include('cabecalhoCliente.ejs')%>
+    <h2>Você tem certeza que deseja excluir o cliente <%= cliente.CLI_NOME %>?</h2>
+    <form method="post">
+        <input type="submit" value="Sim, Excluir">
+        <a href="/cliente/list">Cancelar</a>
+    </form>
+</body>
+<%-include("../rodape.ejs")%>
+</html>
