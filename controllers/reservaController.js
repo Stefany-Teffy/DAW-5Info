@@ -14,13 +14,11 @@ function abreAdd(req, res) {
 }  
 
 function add(req, res) {
-  const { RE_NPESSOAS, RE_NUMERO, ACO_CODIGO, CLI_CODIGO, RE_PRECO, RE_CHECKIN, RE_SERVICO_ESPECIAL } = req.body;
+  const { RE_NPESSOAS, RE_NUMERO, RE_PRECO, RE_CHECKIN, RE_SERVICO_ESPECIAL } = req.body;
 
   const reserva = new Reserva({
     RE_NPESSOAS,
     RE_NUMERO,
-    ACO_CODIGO,
-    CLI_CODIGO,
     RE_PRECO,
     RE_CHECKIN,
     RE_SERVICO_ESPECIAL
@@ -36,11 +34,11 @@ function add(req, res) {
 }
 
 function listar(req, res) {
-  Reserva.find({}).populate('acomodacao').populate('cliente').then(function (reservas, err) {
+  Reserva.find({}).then(function (reservas, err) {
     if (err) {
       res.send(err);
     } else {
-      res.render('reserva/list', {
+      res.render('reserva/listReserva', {
         reservas: reservas
       });
     }
@@ -72,21 +70,15 @@ function del(req, res) {
 }
 
 function abreEdit(req, res) {
-  Reserva.findById(req.params.id).populate('acomodacao').populate('cliente').then(function (reserva, err) {
+  Reserva.findById(req.params.id).then(function (reserva, err) {
     if (err) {
       res.send(err);
     } else {
-      Acomodacao.find({}).then(function(acomodacoes){
-        Cliente.find({}).then(function(clientes){
-          res.render('reserva/edit', {
+          res.render('reserva/editReserva', {
             reserva: reserva,
-            Acomodacoes: acomodacoes,
-            Clientes: clientes
           });
-        });
-      });
-    }
-  });
+        }
+    });   
 }
 
 function edit(req, res) {
@@ -94,12 +86,10 @@ function edit(req, res) {
     if (err) {
       res.send(err);
     } else {
-      const { RE_NPESSOAS, RE_NUMERO, ACO_CODIGO, CLI_CODIGO, RE_PRECO, RE_CHECKIN, RE_SERVICO_ESPECIAL } = req.body;
+      const { RE_NPESSOAS, RE_NUMERO, RE_PRECO, RE_CHECKIN, RE_SERVICO_ESPECIAL } = req.body;
 
       reserva.RE_NPESSOAS = RE_NPESSOAS;
       reserva.RE_NUMERO = RE_NUMERO;
-      reserva.ACO_CODIGO = ACO_CODIGO;
-      reserva.CLI_CODIGO = CLI_CODIGO;
       reserva.RE_PRECO = RE_PRECO;
       reserva.RE_CHECKIN = RE_CHECKIN;
       reserva.RE_SERVICO_ESPECIAL = RE_SERVICO_ESPECIAL;

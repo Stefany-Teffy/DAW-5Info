@@ -5,16 +5,16 @@ function abreAdd(req, res) {
 }
 
 function add(req, res) {
-  const { HO_CODIGO, ACO_ACESSO, ACO_MANUTENCAO, ACO_TIPO, ACO_FOTO, ACO_DESCRICAO, ACO_DISPONIBILIDADE } = req.body;
+  const { ACO_TIPO, ACO_DESCRICAO, ACO_DISPONIBILIDADE, ACO_FOTO, ACO_ACESSO, ACO_MANUTENCAO } = req.body;
 
   const acomodacao = new Acomodacao({
-    HO_CODIGO,
-    ACO_ACESSO,
-    ACO_MANUTENCAO,
+   
     ACO_TIPO,
-    ACO_FOTO,
     ACO_DESCRICAO,
-    ACO_DISPONIBILIDADE
+    ACO_DISPONIBILIDADE,
+    ACO_FOTO,
+    ACO_ACESSO,
+    ACO_MANUTENCAO
   });
 
   acomodacao.save().then(function (acomodacao, err) {
@@ -79,7 +79,7 @@ function edit(req, res) {
     if (err) {
       res.send(err);
     } else {
-      const { ACO_ACESSO, ACO_MANUTENCAO, ACO_TIPO, ACO_DESCRICAO, ACO_DISPONIBILIDADE } = req.body;
+      const { ACO_TIPO, ACO_DESCRICAO, ACO_DISPONIBILIDADE, ACO_FOTO, ACO_ACESSO, ACO_MANUTENCAO } = req.body;
 
       acomodacao.ACO_TIPO = ACO_TIPO;
       acomodacao.ACO_DESCRICAO = ACO_DESCRICAO;
@@ -87,6 +87,7 @@ function edit(req, res) {
       acomodacao.ACO_ACESSO = ACO_FOTO;
       acomodacao.ACO_ACESSO = ACO_ACESSO;
       acomodacao.ACO_MANUTENCAO = ACO_MANUTENCAO;
+     
 
       acomodacao.save().then(function (acomodacao, err) {
         if (err) {

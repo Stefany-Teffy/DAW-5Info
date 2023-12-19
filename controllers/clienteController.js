@@ -9,16 +9,14 @@ function abreAdd(req, res) {
 }
 
 function add(req, res) {
-  const { CLI_CONTATO, CLI_NOME, CLI_CPF, CLI_ENDERECO, CLI_NASCIMENTO, ACO_ACESSO, CLI_EMAIL } = req.body;
+  const { CLI_CONTATO, CLI_NOME, CLI_CPF, CLI_ENDERECO, CLI_NASCIMENTO, CLI_EMAIL } = req.body;
   console.log(req.body)
-  const acomodacaoId = mongoose.Types.ObjectId(ACO_ACESSO);
   const cliente = new Cliente({
     CLI_CONTATO,
     CLI_NOME,
     CLI_CPF,
     CLI_ENDERECO,
     CLI_NASCIMENTO,
-    ACO_ACESSO,
     CLI_EMAIL
   });
 
@@ -70,33 +68,29 @@ function del(req, res) {
 }
 
 function abreEdit(req, res) {
-  Cliente.findById(req.params.id).populate('acomodacao').then(function (cliente, err) {
+  Cliente.findById(req.params.id).then(function (cliente, err) {
     if (err) {
       res.send(err);
     } else {
-      Acomodacao.find({}).then(function(acomodacoes){
-          res.render('cliente/edit', {
+          res.render('cliente/editCliente', {
             cliente: cliente,
-            Acomodacoes: acomodacoes
           });
-      });
+        }
+      });   
     }
-  });
-}
 
 function edit(req, res) {
   Cliente.findById(req.params.id).then(function (cliente, err) {
     if (err) {
       res.send(err);
     } else {
-      const { CLI_CONTATO, CLI_NOME, CLI_CPF, CLI_ENDERECO, CLI_NASCIMENTO, ACO_ACESSO, CLI_EMAIL } = req.body;
+      const { CLI_CONTATO, CLI_NOME, CLI_CPF, CLI_ENDERECO, CLI_NASCIMENTO, CLI_EMAIL } = req.body;
 
       cliente.CLI_CONTATO = CLI_CONTATO;
       cliente.CLI_NOME = CLI_NOME;
       cliente.CLI_CPF = CLI_CPF;
       cliente.CLI_ENDERECO = CLI_ENDERECO;
       cliente.CLI_NASCIMENTO = CLI_NASCIMENTO;
-      cliente.ACO_ACESSO = ACO_ACESSO;
       cliente.CLI_EMAIL = CLI_EMAIL;
 
       cliente.save().then(function (cliente, err) {

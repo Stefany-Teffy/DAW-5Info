@@ -9,10 +9,10 @@
 <body>
     <%- include('cabecalhoReserva.ejs') %>
     <form method="post" action="/reserva/del">
-        <label for="re_numero">Número da Reserva a Deletar</label>
-        <input type="number" name="re_numero" id="re_numero" required placeholder="Digite o número da reserva a deletar"><br>
+        <label for="RE_NUMERO">Número da Reserva a Deletar</label>
+        <input type="number" name="RE_NUMERO" id="RE_NUMERO" required placeholder="Digite o número da reserva a deletar"><br>
         <button type="submit">Deletar Reserva</button>
     </form>
-    <%- include('rodape.ejs') %>
+    <%-include("../rodape.ejs")%>
 </body>
 </html>

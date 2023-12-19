@@ -13,6 +13,6 @@ routes.post('/acomodacao/list', controller.filtrar);
 routes.get('/acomodacao/del/:id', controller.del);
 
 routes.get('/acomodacao/edit/:id', controller.abreEdit);
-routes.post('/acomodacao/edit/:id', controller.edit);
+routes.post('/acomodacao/edit/:id',upload.single('imagem'), controller.edit);
 
 module.exports = routes;

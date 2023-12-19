@@ -10,8 +10,6 @@
     <%- include('cabecalhoReserva.ejs') %>
     <table>
         <tr>
-            <th>Cliente</th>
-            <th>Quarto</th>
             <th>Pessoas</th>
             <th>Número</th>
             <th>Preço</th>
@@ -23,8 +21,6 @@
 
         <% reservas.forEach(function(reserva) { %>
             <tr>
-                <td><%= reserva.CLI_CODIGO %></td>
-                <td><%= reserva.ACO_CODIGO %></td>
                 <td><%= reserva.RE_NPESSOAS %></td>
                 <td><%= reserva.RE_NUMERO %></td>
                 <td><%= reserva.RE_PRECO %></td>
@@ -35,6 +31,6 @@
             </tr>
         <% }); %>
     </table>
-    <%- include('rodape.ejs') %>
+<%-include("../rodape.ejs")%>
 </body>
 </html>

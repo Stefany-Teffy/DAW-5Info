@@ -7,7 +7,7 @@ let AcomodacaoSchema = new conexao.Schema({
   ACO_DISPONIBILIDADE: String,
   ACO_FOTO: String,
   ACO_ACESSO: Number,
-  ACO_MANUTENCAO: Number
+  ACO_MANUTENCAO: String,
 });
 
 module.exports = conexao.model("Acomodacao", AcomodacaoSchema);

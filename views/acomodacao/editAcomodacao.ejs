@@ -11,15 +11,15 @@
         <label for="ACO_TIPO">Tipo</label>
         <input type="text" name="ACO_TIPO" id="ACO_TIPO" required value="<%= acomodacao.ACO_TIPO %>"><br>
         <label for="ACO_DESCRICAO">Descrição</label>
-        <textarea name="ACO_DESCRICAO" id="ACO_DESCRICAO" required value="<%= acomodacao.ACO_DESCRICAO %>"></textarea><br>
+        <textarea name="ACO_DESCRICAO" id="ACO_DESCRICAO" required><%= acomodacao.ACO_DESCRICAO %></textarea><br>
         <label for="ACO_DISPONIBILIDADE">Disponibilidade</label>
         <input type="text" name="ACO_DISPONIBILIDADE" id="ACO_DISPONIBILIDADE" required value="<%= acomodacao.ACO_DISPONIBILIDADE %>"><br>
         <label for="ACO_FOTO">Foto</label>
-        <input type="file" name="ACO_FOTO" id="ACO_FOTO" required value="<%= acomodacao.ACO_FOTO%>"><br>        
+        <input type="file" name="ACO_FOTO" id="ACO_FOTO" required value="<%= acomodacao.ACO_FOTO %>"><br>        
         <label for="ACO_ACESSO">Acesso</label>
         <input type="number" name="ACO_ACESSO" id="ACO_ACESSO" required value="<%= acomodacao.ACO_ACESSO %>"><br>
         <label for="ACO_MANUTENCAO">Manutenção</label>
-        <input type="number" name="ACO_MANUTENCAO" id="ACO_MANUTENCAO" required value="<%= acomodacao.ACO_MANUTENCAO %>"><br>
+        <textarea name="ACO_MANUTENCAO" id="ACO_MANUTENCAO" required><%= acomodacao.ACO_MANUTENCAO %></textarea><br>
         <input type="submit" value="Salvar Edições">
     </form>
 </body>

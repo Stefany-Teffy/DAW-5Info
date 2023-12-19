@@ -1,11 +1,9 @@
 const express = require('express');
 const routes = express.Router();
 const controller = require('../controllers/reservaController');
-const multer = require('multer');
-const upload = multer({ dest: 'public/imagens' });
 
 routes.get('/reserva/add', controller.abreAdd);
-routes.post('/reserva/add', upload.single('imagem'), controller.add);
+routes.post('/reserva/add', controller.add);
 
 routes.get('/reserva/list', controller.listar);
 routes.post('/reserva/list', controller.filtrar);
